@@ -78,6 +78,7 @@ CUSTOM_MATRIX = yes
 avrdude: build
 	ls /dev/tty* > /tmp/1; \
 	echo "Reset your Pro Micro now"; \
+	echo " -p $(MCU) -c avr109 -P /dev/ttyACM0 -U flash:w:$(BUILD_DIR)/$(TARGET).hex"
 	while [[ -z $$USB ]]; do \
 	  sleep 1; \
 	  ls /dev/tty* > /tmp/2; \
