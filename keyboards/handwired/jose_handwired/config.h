@@ -19,8 +19,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "config_common.h"
 
+#ifdef USE_I2C
+#include <stddef.h>
+#ifdef __AVR__
+	#include <avr/io.h>
+	#include <avr/interrupt.h>
+#endif
+#endif
+
+#define MASTER_LEFT
+
 /* USB Device descriptor parameter */
-#define VENDOR_ID 0xFEED
+#define VENDOR_ID 0xFFED
 #define PRODUCT_ID 0x3060
 #define DEVICE_VER 0x0001
 #define MANUFACTURER Jose Lopez
@@ -28,8 +38,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DESCRIPTION A custom keyboard
 
 /* key matrix size */
-#define MATRIX_ROWS 5
-#define MATRIX_COLS 12
+#define MATRIX_ROWS 10
+#define MATRIX_COLS 6
 
 /*
  * Keyboard Matrix Assignments
@@ -44,6 +54,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MATRIX_COL_PINS { D4, C6, D7, E6, B4, B5 }
 // #define MATRIX_ROW_PINS { F7, B1, B3, B2, B6 }
 #define MATRIX_ROW_PINS { F7, B1, B3, B2, B6 }
+
+#define MATRIX_COL_PINS_RIGHT { D4, C6, D7, E6, B4, B5 }
+#define MATRIX_ROW_PINS_RIGHT { F7, B1, B3, B2, B6 }
 #define UNUSED_PINS
 
 /* COL2ROW, ROW2COL*/
