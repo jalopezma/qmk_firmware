@@ -32,7 +32,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT( \
     KC_ESC,  KC_Q,  KC_W,   KC_E,   KC_R,   KC_T,               KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSPC,   \
-    KC_TAB,  KC_A,  KC_S,   KC_D,   KC_F,   KC_G,               KC_H,   KC_J,   KC_K,   KC_L,   ES_SCLN,KC_QUOT,   \
+    KC_TAB,  KC_A,  KC_S,   KC_D,   KC_F,   KC_G,               KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,   \
     KC_LSFT, KC_Z,  KC_X,   KC_C,   KC_V,   KC_B,               KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,   \
                     ____,   ____,                                               ____,   ____,                      \
                                     ADJUST, KC_SPC,             KC_ENT, ADJUST,                                    \
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     ____,   ____,               ____,   ____                                       \
   ),
   [_ADJUST] = LAYOUT( \
-    ____,    RESET,  ____,  AU_ON,  AU_OFF, AG_NORM,            AG_SWAP,____,   ____,   ____,   ____,   KC_DEL,    \
+    ____,    RESET,  CL_NORM,____,   ____,  AG_NORM,            AG_SWAP,____,   ____,   ____,   ____,   KC_DEL,    \
     ____,    ____,   KC_MPLY,KC_MUTE,____,  ____,               KC_LEFT,KC_DOWN,KC_UP, KC_RIGHT,ES_NTIL,____,      \
     ____,    ____,   KC_VOLD,KC_VOLU,____,  ____,               ES_ACUT,____,   ____,   ____,   ____,   ____,      \
                      ____,  ____,                                               ____,   ____,                      \
