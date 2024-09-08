@@ -20,9 +20,11 @@
 #include "keymap_spanish.h"
 
 #define _QWERTY 0
-#define _LOWER 1
-#define _RAISE 2
+#define _GAMING 1
+#define _LOWER 2
+#define _RAISE 3
 #define _ADJUST 16
+
 
 #define RAISE MO(_RAISE)
 #define LOWER MO(_LOWER)
@@ -39,12 +41,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                     KC_LALT,LOWER,              RAISE,  KC_RALT,                                   \
                                     KC_LGUI,KC_LCTL,            KC_RCTL,KC_RGUI                                    \
   ),
+  [_GAMING] = LAYOUT( \
+    KC_T,  KC_ESC,  KC_Q,   KC_W,   KC_E,   KC_R,               KC_Y,   KC_U,   KC_I,   KC_O,   KC_P,   KC_BSPC,   \
+    KC_G,  KC_TAB,  KC_A,   KC_S,   KC_D,   KC_F,               KC_H,   KC_J,   KC_K,   KC_L,   KC_SCLN,KC_QUOT,   \
+    KC_B,  KC_LSFT, KC_Z,   KC_X,   KC_C,   KC_V,               KC_N,   KC_M,   KC_COMM,KC_DOT, KC_SLSH,KC_RSFT,   \
+                    ____,   ____,                                               ____,   ____,                      \
+                                    ADJUST, KC_SPC,             KC_ENT, ADJUST,                                    \
+                                    KC_LALT,KC_LCTL,            RAISE,  KC_RALT,                                   \
+                                    KC_LGUI,LOWER,              KC_RCTL,KC_RGUI                                    \
+  ),
   [_LOWER] = LAYOUT( \
     KC_TILD, KC_EXLM,KC_AT, KC_HASH,KC_DLR, KC_PERC,            KC_CIRC,KC_AMPR,KC_ASTR,KC_LPRN,KC_RPRN,KC_DEL,    \
     ____,    KC_F1,  KC_F2, KC_F3,  KC_F4,  KC_F5,              KC_F6,  KC_UNDS,KC_PLUS,KC_LCBR,KC_RCBR,KC_PIPE,   \
     ____,    KC_F7,  KC_F8, KC_F8,  KC_F10, KC_F11,             KC_F12,S(KC_NUHS),S(KC_NUBS),____,KC_NUBS,____,    \
                     ____,   ____,                                               ____,   ____,                      \
-                                    ____,   ____,               ____,   ____,                                      \
+                                    ____,   ____,               RESET,  ____,                                      \
                                     ____,   ____,               ____,   ____,                                      \
                                     ____,   ____,               ____,   ____                                       \
   ),
@@ -53,14 +64,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ____,    ____,   ____,  KC_HOME,KC_END, ____,               ____,   KC_MINS,KC_EQL, KC_LBRC,KC_RBRC,KC_BSLS,   \
     ____,    ____,   ____,  ____,   ____,   ____,               KC_NUHS,KC_NUBS,____,   ____,   ____,   ____,      \
                      ____,  ____,                                               ____,   ____,                      \
-                                    ____,   ____,               ____,   ____,                                      \
+                                    ____,   ____,               RESET,  ____,                                      \
                                     ____,   ____,               ____,   ____,                                      \
                                     ____,   ____,               ____,   ____                                       \
   ),
   [_ADJUST] = LAYOUT( \
     ____,    RESET,  CL_NORM,____,   ____,  AG_NORM,            AG_SWAP,____,   ____,   ____,   ____,   KC_DEL,    \
-    ____,    ____,   KC_MPLY,KC_MUTE,____,  ____,               KC_LEFT,KC_DOWN,KC_UP, KC_RIGHT,ES_NTIL,____,      \
-    ____,    ____,   KC_VOLD,KC_VOLU,____,  ____,               ES_ACUT,____,   ____,   ____,   ____,   ____,      \
+    ____,    ____,   KC_MPLY,KC_MUTE,____,  DF(_GAMING),        KC_LEFT,KC_DOWN,KC_UP, KC_RIGHT,ES_NTIL,____,      \
+    ____,    ____,   KC_VOLD,KC_VOLU,____,  DF(_QWERTY),        ES_ACUT,____,   ____,   ____,   ____,   ____,      \
                      ____,  ____,                                               ____,   ____,                      \
                                     ____,   ____,               ____,   ____,                                      \
                                     ____,   ____,               ____,   ____,                                      \
